@@ -1,0 +1,4 @@
+beautifulsoup4==4.11.1
+regex==2022.8.17
+requests==2.21.0
+urllib3==1.24.3
