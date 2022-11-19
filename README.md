@@ -25,3 +25,13 @@ pip install -r requirements.txt
 ```
 
 Then ErrorFinder is ready to use.
+
+### **Usage**
+
+---
+
+```plaintext
+python3 ErrorFinder.py -f url.txt
+or 
+python3 ErrorFinder.py --website https://example.com
+```
