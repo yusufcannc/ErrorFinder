@@ -35,6 +35,7 @@ requests:
           - '(\.*(?i)\bApache Tomcat\b\S*)'
           - '(\.*(?i)\b\nginx\b*)'
           - '(\.*(?i)\bApache\b*)'
+          - '(\.*(?i)\bDatabase Results Error\b*)'
 
         
         
