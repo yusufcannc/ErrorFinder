@@ -30,8 +30,12 @@ requests:
           - '(\.*(?i)\blocal.ERROR\b)'
           - '(\.*(?i)\bError Log for ROOT\b)'
           - '(\.*(?i)\bApache Tomcat\b\S*)'
-          - '(\.*(?i)\b\nginx\b*)'
+          - '(\.*(?i)\bnginx\b*)'
           - '(\.*(?i)\bApache\b\W[0-9])'
+          - 'NotFoundHttpException'
+
+
+
         condition: or 
       - type: regex
         name: improper-error-page2
