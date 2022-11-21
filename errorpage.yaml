@@ -4,7 +4,7 @@ info:
   name: Improper Error Page
   author: yusufcannc
   severity: info
-  description: Improper Error Pages are unstructured error pages. These error pages can contain important information about servers or websites.
+  description: xxxxx
   tags: errorpage
 
 
@@ -12,21 +12,18 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-    extractors:
+    matchers:
       - type: regex
         name: improper-error-page
         part: body
         regex:
           - '(\.*(?i)\bVersion Information\b.)'
           - '(\.*(?i)\bphysical path\b)'
-          - '(\.*(?i)\bline\b\s\d\d*)'
-          - '(\.*(?i)\bLine Number\b\W\W[0-9]*)'
           - '(\.*(?i)\bArgumentException\b)'
-          - '(\.*(?i)\btraceback\b)'
           - '(\.*(?i)\b<role \b)'
           - '(\.*(?i)\bRequest Method\b)'
           - '(\.*(?i)\bErrorException\b)'
-          - '(\.*(?i)\bWeb.config\b)'
+          - '(\.*(?i)\bWeb.Config Configuration File\b)'
           - '(\.*(?i)\bFormatException\b)'
           - '(\.*Exception Details)'
           - '(\.*(?i)\bError Occurred While Processing Request\b)'
@@ -34,8 +31,24 @@ requests:
           - '(\.*(?i)\bError Log for ROOT\b)'
           - '(\.*(?i)\bApache Tomcat\b\S*)'
           - '(\.*(?i)\b\nginx\b*)'
-          - '(\.*(?i)\bApache\b*)'
-          - '(\.*(?i)\bDatabase Results Error\b*)'
+          - '(\.*(?i)\bApache\b\W[0-9])'
+        condition: or 
+      - type: regex
+        name: improper-error-page2
+        regex:
+          - '(\.*(?i)\bLine Number\b\W\W[0-9]*)'
+        condition: or
+        part: body
+      
+      - type: regex
+        name: improper-error-page3
+        regex:
+          - '(\.*(?i)\btraceback\b)'
+          
+        part: body
+        
+        
+        
 
-        
-        
+              
+
